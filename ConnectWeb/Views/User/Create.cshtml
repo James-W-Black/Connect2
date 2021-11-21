@@ -1,0 +1,44 @@
+﻿@model User
+@*@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>*@
+<form method="post">
+    <div class="border p-3 mt-4">
+
+        <div class="row pb-2">
+            <h2 class="text-primary">Create User</h2>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="username" >Username:</label>
+            <input asp-for="username" class="form-control"/>
+        </div>
+
+         <div class="mb-3">
+            <label asp-for="firstName" >firstName:</label>
+            <input asp-for="firstName" class="form-control"/>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="lastName" >lastName:</label>
+            <input asp-for="lastName" class="form-control"/>
+        </div>
+
+        @*will take this from logged in user*@
+         <div class="mb-3">
+            <label asp-for="clientId" >clientId:</label>
+            <input asp-for="clientId" class="form-control"/>     
+        </div>
+
+        @*will be a drop down list*@
+        <div class="mb-3">
+            <label asp-for="userTypeId" >userTypeId:</label>
+            <input asp-for="userTypeId" class="form-control"/>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+        <a asp-controller="User" asp-action="index" class="btn btn-secondary" style="width:150px">Back to list</a>
+    </div>
+</form>
